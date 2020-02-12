@@ -1,0 +1,23 @@
+
+ /*
+  *  Message type:
+  *
+  * *** - informative message
+  * ### - warning message
+  * !!! - error message
+  *
+  *  List of user commands:
+  *
+  * \connect [IP] [PORT] -- Connect to the server with [IP] and [PORT]
+  *                                     [IP] -- xxx.xxx.xxx.xxx (IPv4)
+  *                          Note: command without parametrs - LAN connection
+  *                                with default IP = 127.0.1.1 and PORT = 5000
+  * \disconnect          -- Disconnect from server
+  * \sqlbnf              -- Get the BNF-grammar of the SQL language
+  * \clear               -- Clear the screen
+  * \exit                -- Shutdown
+  * \help                -- Display command list
+  *
+  * [!] Note: SQL++ query must end with semicolon;
+  */
+ 

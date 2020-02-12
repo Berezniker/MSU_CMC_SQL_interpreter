@@ -1,0 +1,113 @@
+
+  /*
+   *               BNF-grammar of the SQL language
+   *
+   *
+   * <SQL_preposition> ::= <SELECT_preposition> | <INSERT_preposition> |
+   * |                     <UPDATE_preposition> | <DELETE_preposition> |
+   * |                     <CREATE_preposition> | <DROP  _preposition>
+   * |                     ;
+   * |
+   * |
+   * |-- <SELECT_preposition> ::=
+   * |   |          SELECT <object_list> FROM <table_name> <WHERE_clause>
+   * |   |
+   * |   |-- <object_list> ::= <object_name> { , <object_name> } | *
+   * |   |   |
+   * |   |   |-- <object_name ::= <name>
+   * |   |
+   * |   |-- <table_name> ::= <name>
+   * |       |
+   * |       |-- <name> ::= <letter> | _ { <letter> | <digit> | _ }
+   * |           |
+   * |           |-- <letter> ::= a | .. | z | A | .. | Z
+   * |           |
+   * |           |-- <digit>  ::= 1 | .. | 9
+   * |
+   * |
+   * |-- <INSERT_preposition> ::= 
+   * |   |   INSERT INTO <table_name> ( <object_value> { , <object_value> } )
+   * |   |
+   * |   |-- <object_value> ::= <string> | <long_integer>
+   * |       |
+   * |       |-- <string> ::= '<symbol> { <symbol> }'
+   * |           |
+   * |           |-- <symbol> ::= " any character except apostrophe ' "
+   * |
+   * |
+   * |-- <UPDATE_preposition> ::= 
+   * |   UPDATE <table_name> SET <object_name> = <expression> <WHERE_clause>
+   * |
+   * |
+   * |-- <DELETE_preposition> ::= DELETE FROM <table_name> <WHERE_clause>
+   * |
+   * |
+   * |-- <CREATE_preposition> ::=
+   * |   |       CREATE TABLE <table_name> ( <list_of_object_expresion> )
+   * |   |
+   * |   |-- <list_of_object_expresion> ::= 
+   * |       |              <object_description> { , <object_description> }
+   * |       |
+   * |       |-- <object_description> ::= <object_name> <object_type>
+   * |           |
+   * |           |-- <object_type> ::= TEXT | LONG
+   * |
+   * |
+   * |-- <DROP_preposition> ::= DROP TABLE <table_name> 
+   *
+   *
+   * <WHERE_clause> ::=
+   * |              WHERE <TEXT_object_name> [ NOT ] LIKE <sample_line> |
+   * |              WHERE <expressions> [ NOT ] IN ( <list_of_constants> ) |
+   * |              WHERE <expressions> [ NOT ] IN ( <subquery> ) |
+   * |              WHERE <logical_expression> |
+   * |              WHERE ALL
+   * |
+   * |-- <sample_line> ::= <string>
+   * |
+   * |-- <expressions> ::= <Long_expressions> | <Text_expressions>
+   * |   |
+   * |   |-- <Long_expressions> ::= <Long_term> { <+|-> <Long_term> }
+   * |   |   |
+   * |   |   |-- <+|-> ::= + | -
+   * |   |   |
+   * |   |   |-- <Long_term> ::= 
+   * |   |   |   |           <Long_multiplier> { <*|/|%> <Long_multiplier> }
+   * |   |   |   |
+   * |   |   |   |-- <*|/|%> ::= * | / | %
+   * |   |   |   |
+   * |   |   |   |-- <Long_multiplier> ::= 
+   * |   |   |   |   |                 <Long_value> | ( <Long_expressions> )
+   * |   |   |   |   |
+   * |   |   |   |   |-- <Long_value> ::= <LONG_object_name> | <long_integer>
+   * |   |
+   * |   |-- <Text_expressions> ::= <TEXT_object_name> | <string>
+   * |
+   * |
+   * |-- <list_of_constants> ::= <string> { , <string> } |
+   * |                                <long_integer> { , <long_integer> }
+   * |
+   * |-- <logical_expression> ::= <logical_term> { OR <logical_term> }
+   * |   |
+   * |   |-- <logical_term> ::=
+   * |   |   |              <logical_multiplier> { AND <logical_multiplier> }
+   * |   |   |
+   * |   |   |-- <logical_multiplier> ::= NOT <logical_multiplier> |
+   * |   |   |   |                        ( <logical_expression> ) |
+   * |   |   |   |                        <relation>
+   * |   |   |   |
+   * |   |   |   |-- <relation> ::= <Text_relation> | <Long_relation>
+   * |   |   |   |   |
+   * |   |   |   |   |-- <Text_relation> ::= <Text_expressions>
+   * |   |   |   |   |                       <comparison_operation>
+   * |   |   |   |   |                     [ <Text_expressions> | <subquery> ]
+   * |   |   |   |   |
+   * |   |   |   |   |-- <Long_relation> ::= <Long_expressions>
+   * |   |   |   |   |   |                   <comparison_operation>
+   * |   |   |   |   |   |                 [ <Long_expressions> | <subquery> ]
+   * |   |   |   |   |   |
+   * |   |   |   |   |   |-- <comparison_operation> ::= = | > | < | >= | <= | !=
+   * |
+   * |--<subquery> ::= <SQL_preposition>
+   *
+   */

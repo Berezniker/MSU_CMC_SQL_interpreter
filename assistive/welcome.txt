@@ -1,0 +1,21 @@
+
+  |                                                             |
+--+-------------------------------------------------------------+--
+  |                                                             |
+  |   Hello!                                                    |
+  |                                                             |
+  |               SSSSS  QQQQQ  L                               |
+  |               S      Q   Q  L      +    +                   |
+  |   Welcome to  SSSSS  Q   Q  L     +++  +++  interpreter     |
+  |                   S  Q   Q  L      +    +                   |
+  |               SSSSS  QQQQQQ LLLLL                           |
+  |                                                             |
+  |   Try \help to get more information                         |
+  |                                                             |
+  |                  all rights reserved                        |
+  |                                  (c) Berezniker Alexey      |
+  |                                      Mishustina Margarita   |
+  |                                      Cherepnina Marya       |
+  |                                    212 group CMC MSU 2019   |
+--+-------------------------------------------------------------+--
+  |                                                             |
